@@ -1,0 +1,45 @@
+.table-wrapper {
+    width: 100%;
+    margin-top: 2em;
+    table {
+        border-collapse: collapse;
+        border-spacing: 0;
+        width: 100%;
+        border: 1px solid #000;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        tr {
+            display: flex;
+            flex-direction: column;
+            th {
+                font-weight: bold;
+                text-align: left;
+            }
+            td {
+                text-align: center;
+            }
+            .bold-text {
+                font-weight: 900;
+                font-size: 1.3em;
+            }
+            th, td {
+                padding: 16px;
+
+                input, select {
+                    padding: 0.4em 3.3em;
+                    border-radius: 21px;
+                    outline: none;
+                    border: 1px solid silver;
+                    text-align: center;
+                    appearance: none;
+                    background: url("http://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/br_down.png") white no-repeat 98.5% !important; /* !important used for overriding all other customisations */
+                    background: url("http://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/br_down.png") white no-repeat calc(100% - 10px) !important; /* Better placement regardless of input width */
+                    &:hover {
+                        cursor: pointer;
+                    }
+                }
+              }
+        }
+    }
+}

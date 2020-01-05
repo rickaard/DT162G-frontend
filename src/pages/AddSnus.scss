@@ -1,0 +1,22 @@
+.subpage-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    // font-size: 1.2rem;
+    background-color: #fff;
+
+    .header-title {
+        text-align: center;
+        background-color: #000;
+        width: 100%;
+        color: #FFF;
+        padding: .2em;
+        margin-bottom: 2.5em;
+    }
+    .info-text, .form-wrapper {
+        max-width: 600px;
+        width: 100%;
+        margin-bottom: 2.5em;
+        font-size: 1.2em;
+    }
+}

@@ -1,0 +1,63 @@
+.admin-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    .admin-menubar {
+        background-color: #000;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        margin-bottom: 2em;
+
+        .header-title {
+            flex:1 0 auto;
+            text-align: center;
+            color: #FFF;
+            padding: .2em;
+        }
+        button {
+            position: absolute;
+            right: 0;
+
+            display: inline-block;
+            border: none;
+            padding: 1rem 2rem;
+            margin: 0;
+            text-decoration: none;
+            background: inherit;
+            color: #FFF;
+            font-family: inherit;
+            font-size: 1rem;
+            cursor: pointer;
+            text-align: center;
+            transition: background 250ms ease-in-out, transform 150ms ease;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+        }
+    }
+
+
+}
+
+.admin-toolbar {
+    width: 50%;
+    display: flex;
+    .admin-icon {
+        font-size: 3em;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+    .waiting {
+        color: yellow;
+    }
+    .approved {
+        color: green;
+    }
+    .denied {
+        color: red;
+    }
+}

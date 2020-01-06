@@ -1,15 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import { useHistory } from "react-router-dom";
-
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faMeh, faFrown, faSmile } from '@fortawesome/free-solid-svg-icons'
+import useModal from 'use-react-modal';
 
 
+import Toolbar from './admin-components/Toolbar';
 import Footer from '../components/Footer';
+import AdminTable from './admin-components/AdminTable';
 
 import './AdminPage.scss';
 
 const AdminPage = () => {
+    const { isOpen, openModal, closeModal, Modal } = useModal({background: 'rgba(0, 0, 0, 0.5)'});
     const [snusData, setSnusData] = useState([]);
     const [view, setView] = useState('');
 
@@ -21,8 +22,42 @@ const AdminPage = () => {
     }
 
     useEffect(() => {
-        //
-    }, [])
+        console.log('state view: ',view);
+    }, [view])
+
+    const ModalStyle = {
+        background: '#FFF',
+        padding: '2em'
+    };
+
+    const handleView = viewArg => {
+        setView(viewArg);
+    }
+
+
+    const tableContent = viewState => {
+        if (viewState === '') return;
+        if (viewState === 'pending') {
+            return <div className="content-wrapper">
+                        <h3>Väntar på godkännande</h3>
+                        <AdminTable status={'1'}/>
+                    </div>
+        }
+        if (viewState === 'approved') {
+            return <div className="content-wrapper">
+                        <h3>Redan godkända</h3>
+                        <AdminTable status={'2'}/>
+                    </div>
+        }
+        if (viewState === 'denied') {
+            return <div className="content-wrapper">
+                        <h3>Nekade</h3>
+                        <AdminTable status={'3'}/>
+                    </div>
+        }
+    };
+
+
 
     return (
         <div className="admin-container">
@@ -31,18 +66,28 @@ const AdminPage = () => {
                 <button onClick={handleLogOut}>Logga ut</button>
             </div>
 
-            <div className="admin-toolbar">
-                <span className="admin-icon waiting"><FontAwesomeIcon icon={faMeh}/></span>
-                <span className="admin-icon approved"><FontAwesomeIcon icon={faFrown}/></span>
-                <span className="admin-icon denied"><FontAwesomeIcon icon={faSmile}/></span>
-            </div>
+            <main className="admin-content">
+                <Toolbar handleView={handleView}/>
+                
+                {/* <div>
+                    <button onClick={openModal}>Open me!</button>
+                </div> */}
+                {tableContent(view)}
+            </main>
 
-            <div className="admin-content">
-                <div>blablablabkla</div>
-            </div>
             
             <Footer />
+            {isOpen && (
+                <Modal>
+                    <div style={ModalStyle}>
+                        <button onClick={closeModal}>close</button>
+                        <p>Hej hej hje hje hemskt mycket hej</p>
+                    </div>
+                </Modal>
+            )}
         </div>
+
+        
 
     )
 }

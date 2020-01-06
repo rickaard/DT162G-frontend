@@ -14,10 +14,6 @@ function App() {
 
       <Switch>
 
-        {/* <Route path="/admin">
-          <AdminPage />
-        </Route> */}
-
         <Route path="/add-snus">
           <AddSnus />
         </Route>

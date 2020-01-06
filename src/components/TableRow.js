@@ -16,7 +16,7 @@ const TableRow = props => {
     const [snusTable, setSnusTable] = useState(initTable);
 
     useEffect( () => {
-        fetch('http://localhost:3001/api/snus/')
+        fetch(process.env.REACT_APP_PUBLIC_API_URL)
         .then(res => res.json())
         .then(data => {
             data.snus.map(element => setSnusValue(snusValue => [...snusValue, `${element.brand} ${element.product}`]));
@@ -52,20 +52,16 @@ const TableRow = props => {
 
     return (
         <tbody>
-        <tr>
-            <td>
-                <select onChange={event => handleSelectChange(event)}>                  
-                    {snusOptions}
-                </select>
-            </td>
-            <td>{snusTable.brand}</td>
-            <td>{snusTable.product}</td>
-            <td>{snusTable.snusType}</td>
-            <td>{snusTable.nicotineAmount}</td>
-            <td>{snusTable.amountPerBox}</td>
-            <td>{snusTable.producer}</td>
-            <td>{snusTable.misc}</td>
-        </tr>
+            <tr>
+                <td><select onChange={event => handleSelectChange(event)}>{snusOptions}</select></td>
+                <td>{snusTable.brand}</td>
+                <td>{snusTable.product}</td>
+                <td>{snusTable.snusType}</td>
+                <td>{snusTable.nicotineAmount}</td>
+                <td>{snusTable.amountPerBox}</td>
+                <td>{snusTable.producer}</td>
+                <td>{snusTable.misc}</td>
+            </tr>
         </tbody>
     )
 }

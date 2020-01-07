@@ -1,11 +1,14 @@
 import React, { useState, useEffect } from 'react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faTrash, faEdit } from '@fortawesome/free-solid-svg-icons'
+import AdminEditForm from './AdminEditForm';
+import AdminDeleteModal from './AdminDeleteModal';
 
 const AdminTableRow = props => {
-    const [snusData, setSnusData] = useState(undefined);
+    const [snusData, setSnusData] = useState(undefined); // state där alla snus lagras
+    const [toggleUpdate, setToggleUpdate] = useState(false); // boolean-state som togglas för att forcera en update av komponent när man gör en ändring
+
 
     useEffect( () => {
+
         if (localStorage.getItem("token")) {
             fetch(process.env.REACT_APP_ADMIN_API_URL + props.status, {
                 headers: {
@@ -14,13 +17,17 @@ const AdminTableRow = props => {
             })
             .then(res => res.json())
             .then(data => {
-                // data.snus.map(element => setSnusValue(snusValue => [...snusValue, `${element.brand} ${element.product}`]));
                 setSnusData(data.snus);
-                console.log(data);
             })
             .catch(err => console.log(err))
         }
-    }, [props.status])
+
+    }, [props.status, toggleUpdate])
+
+    const updateTableRow = () => {
+        setToggleUpdate(!toggleUpdate); // toggla state för att, genom useEffect, forcera en update/re-render av komponenten
+    }
+
 
     return (
         <tbody>
@@ -36,12 +43,13 @@ const AdminTableRow = props => {
                     <td>{snus.producer}</td>
                     <td>{snus.misc}</td>
                     <td>{snus.status}</td>
-                    <td className="table-icon edit"><FontAwesomeIcon icon={faEdit} /></td>
-                    <td className="table-icon delete"><FontAwesomeIcon icon={faTrash} /></td>
+                    <td className="table-icon edit"><AdminEditForm snus={snus} updateTableRow={updateTableRow} snusId={snus._id}/></td>
+                    <td className="table-icon delete"><AdminDeleteModal updateTableRow={updateTableRow} snusId={snus._id}/></td>
                 </tr>
                 )
             })
             }
+
         </tbody>
     )
 }

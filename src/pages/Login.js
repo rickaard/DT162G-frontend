@@ -3,7 +3,6 @@ import { useForm } from 'react-hook-form';
 import { useHistory, useLocation } from "react-router-dom";
 
 import './Login.scss';
-
 import LoginLogo from '../assets/login-logo.png';
 
 const Login = () => {
@@ -34,7 +33,6 @@ const Login = () => {
             }
         })
         .catch(err => console.log(err))
-        // e.target.reset();
     };
 
     return (

@@ -1,0 +1,81 @@
+.form-wrapper {
+    overflow-y: auto;
+}
+
+.admin-edit-form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    label {
+        margin: 1em 0 .3em 0;
+        min-width: 270px;
+    }
+    input {
+        padding: 0.8em 0.7em;
+        border-radius: 6px;
+        border: 1px solid silver;
+    }
+    select {
+        padding: 0.4em .3em;
+        outline: none;
+        border: 1px solid silver;
+        appearance: none;
+        background: url("http://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/br_down.png") white no-repeat 98.5% !important; /* !important used for overriding all other customisations */
+        background: url("http://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/br_down.png") white no-repeat calc(100% - 10px) !important; /* Better placement regardless of input width */
+        &:hover {
+            cursor: pointer;
+        }
+    }
+    input[type=submit] {
+        width: 50%;
+        align-self: flex-end;
+        margin-top: 1em;
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
+    .error-msg {
+        width: max-content;
+        padding: 0 0.2em;
+        color: #fff;
+        background-color: #da362a;
+        border-radius: 5px;
+        margin-top: .8em;
+        align-self: center;
+        &::before {
+            content: "";
+            height: 0;
+            position: relative;
+            width: 0;
+            border: 10px solid transparent;
+            border-bottom-color: #da362a;
+            bottom: 36px;
+            right: 50%;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    }
+    .success-msg {
+        font-size: .9em;
+        margin: 1em 0;
+        color: #186018;
+        align-self: end;
+        font-weight: bold;
+        align-self: center;
+    }
+
+}
+
+.closeBtn {
+	position: absolute;
+	font-weight: 900;
+	top: 7px;
+	right: 12px;
+    font-size: 1.4em;
+    &:hover {
+        cursor: pointer;
+        transform: translatey(-1.5px) scale(1.05);
+    }
+}

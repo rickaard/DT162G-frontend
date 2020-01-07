@@ -19,7 +19,7 @@ const AddSnusForm = () => {
         .then(resp => resp.json())
         .then(data => {
             e.target.reset();
-            setSuccessMsg(true)
+            setSuccessMsg(true);
         })
         .catch(err => console.log(err))
     };

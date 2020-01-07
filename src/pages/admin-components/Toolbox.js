@@ -9,9 +9,6 @@ const Toolbox = props => {
                     alt={`${props.icon} icon`}
                 />
             </div>
-            <div className="toolbox-amount">
-                <span>{props.amount}</span>
-            </div>
             <div className="toolbox-status">
                 <span>{props.status}</span>
             </div>

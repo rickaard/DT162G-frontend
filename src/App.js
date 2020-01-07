@@ -6,7 +6,9 @@ import PrivateRoute from './components/PrivateRoute';
 import HomePage from './pages/HomePage';
 import AddSnus from './pages/AddSnus';
 import Login from './pages/Login';
-import AdminPage from './pages/AdminPage'
+import AdminPage from './pages/AdminPage';
+import About from './pages/About';
+import SnusPage from './pages/SnusPage';
 
 function App() {
   return (
@@ -26,6 +28,13 @@ function App() {
             <AdminPage />
         </PrivateRoute>
 
+        <Route path="/about">
+          <About />
+        </Route>
+
+        <Route path="/snus/:id">
+          <SnusPage />
+        </Route>
 
         <Route path="/">
           <HomePage />

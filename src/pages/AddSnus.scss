@@ -2,7 +2,6 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    // font-size: 1.2rem;
     background-color: #fff;
 
     .header-title {
@@ -12,6 +11,13 @@
         color: #FFF;
         padding: .2em;
         margin-bottom: 2.5em;
+        a {
+            color: inherit;
+            text-decoration: none;
+            &:hover {
+                cursor: pointer;
+            }
+        }
     }
     .info-text, .form-wrapper {
         max-width: 600px;

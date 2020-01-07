@@ -13,26 +13,20 @@ const Toolbar = props => {
             <Toolbox 
                 colorScheme='blue'
                 icon={pendingIcon}
-                amount='8'
                 status='pending'
                 handleView={props.handleView}
-                // onClick={() => props.handleView('pending')}
             />
             <Toolbox
                 colorScheme='green'
                 icon={approvedIcon}
-                amount='45'
                 status='approved'
                 handleView={props.handleView}
-                // onClick={() => props.handleView('approved')}
             />
             <Toolbox
                 colorScheme='red'
                 icon={deniedIcon}
-                amount='6'
                 status='denied'
                 handleView={props.handleView}
-                // onClick={() => props.handleView('denied')}
             />
         </div>
     )

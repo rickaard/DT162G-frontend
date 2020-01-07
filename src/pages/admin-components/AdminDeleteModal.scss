@@ -1,0 +1,31 @@
+.delete-wrapper {
+    display: flex;
+    flex-direction: column;
+    .delete-text {
+        font-size: 1.5em;
+    }
+    .btn-wrapper {
+        margin-top: 2em;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        font-size: 1.3em;
+        .delete-confirm {
+            background-color: #cd3b46;
+            padding: 0.2em 0.6em;
+            border-radius: 6px;
+            color: #fff;
+            &:hover {
+                cursor: pointer;
+                background-color: red;
+            }
+        }
+        .delete-close {
+            padding: .2em .6em;
+            &:hover {
+                text-decoration: underline;
+                cursor: pointer;
+            }
+        }
+    }
+}

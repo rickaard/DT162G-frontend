@@ -11,7 +11,7 @@ const About = () => {
                 <h3>Välkommen till Snusdatabasen!</h3>
                 <div className="info-text">
                     <p>På denna sida kan du hitta och jämföra dina favoritsnuser med varandra. Hjälp mig gärna att fylla databasen med de snuser som fattas.</p>
-                    <p><Link to="add-snus">Här</Link> kan du enkelt lägga till snuser. De dyker upp på sidan så fort någon administratör har godkänt dem.</p>
+                    <p><Link to="/snusdatabasen/add-snus">Här</Link> kan du enkelt lägga till snuser. De dyker upp på sidan så fort någon administratör har godkänt dem.</p>
                 </div>
             </div>
 

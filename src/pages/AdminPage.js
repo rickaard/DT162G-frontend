@@ -14,7 +14,7 @@ const AdminPage = () => {
 
     const handleLogOut = () => {
         localStorage.clear();
-        history.push("/");
+        history.push("/snusdatabasen/");
     }
 
     const handleView = viewArg => {
@@ -49,7 +49,7 @@ const AdminPage = () => {
     return (
         <div className="admin-container">
             <div className="admin-menubar">
-                <h1 className="header-title"><Link to="/">Snusdatabasen</Link></h1>
+                <h1 className="header-title"><Link to="/snusdatabasen/">Snusdatabasen</Link></h1>
                 <button onClick={handleLogOut}>Logga ut</button>
             </div>
 

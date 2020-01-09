@@ -16,27 +16,27 @@ function App() {
 
       <Switch>
 
-        <Route path="/snusdatabasen/add-snus">
+        <Route path="/add-snus">
           <AddSnus />
         </Route>
 
-        <Route path="/snusdatabasen/login">
+        <Route path="/login">
             <Login />
         </Route>
 
-        <PrivateRoute path="/snusdatabasen/admin">
+        <PrivateRoute path="/admin">
             <AdminPage />
         </PrivateRoute>
 
-        <Route path="/snusdatabasen/about">
+        <Route path="/about">
           <About />
         </Route>
 
-        <Route path="/snusdatabasen/snus/:id">
+        <Route path="/snus/:id">
           <SnusPage />
         </Route>
 
-        <Route path="/snusdatabasen/">
+        <Route exact path="/">
           <HomePage />
         </Route>
 

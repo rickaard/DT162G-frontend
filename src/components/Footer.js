@@ -12,12 +12,12 @@ const Footer = () => {
         <img className="footer-img" src={roundedImg} alt=""/>
             <div className="footer-content">
                 <div>
-                    <Link to="/snusdatabasen/">snusdatabasen.se</Link>
+                    <Link to="/">snusdatabasen.se</Link>
                 </div>
                 <div className="footer-links">
-                    <Link to="/snusdatabasen/add-snus">Lägg till snus</Link>
+                    <Link to="/add-snus">Lägg till snus</Link>
                     <a href="mailto:rickaard@gmail.com">Kom i kontakt</a>
-                    <Link to="/snusdatabasen/about">Om snusdatabasen</Link>
+                    <Link to="/about">Om snusdatabasen</Link>
                 </div>
             </div>
 

@@ -25,7 +25,7 @@ const SnusPage = props => {
         <div>
             
             <div className="snuspage-container">
-                <h1 className="header-title"><Link to="/snusdatabasen/">Snusdatabasen</Link></h1>
+                <h1 className="header-title"><Link to="/">Snusdatabasen</Link></h1>
                 {!snusData ? <div className="snus-content"><span>Ingen snus det ID:t</span></div> :
                 <div className="snus-content">
                     <img 

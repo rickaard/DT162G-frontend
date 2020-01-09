@@ -65,7 +65,7 @@ const SearchBar = () => {
                     <div className="search-result">
                         {searchResult && (
                             searchResult.map((snus, index) => {
-                                return <span key={index}><Link to={`/snusdatabasen/snus/${snus._id}`}>{`${snus.brand} ${snus.product}`}</Link></span>
+                                return <span key={index}><Link to={`/snus/${snus._id}`}>{`${snus.brand} ${snus.product}`}</Link></span>
                             })
                         )}
                     </div>

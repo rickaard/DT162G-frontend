@@ -8,7 +8,7 @@
     background: #fff;
     position: absolute;
     margin-top: -5em;
-    padding: 1em 2em 2.2em 2em;
+    padding: 1em;
     left: 50%;
     transform: translate(-50%);
     display: flex;
@@ -19,4 +19,16 @@
         font-size: 1.6em;
     }
 
+}
+
+@media screen and (max-width: 1200px) {
+    .compare-container {
+        width: 80%;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .compare-container {
+        width: 90%;
+    }
 }

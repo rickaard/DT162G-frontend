@@ -9,7 +9,7 @@ const AddSnusForm = () => {
     const [successMsg, setSuccessMsg] = useState(false);
 
     const onSubmit = (data, e) => {
-        fetch('http://localhost:3001/api/snus/', {
+        fetch(process.env.REACT_APP_PUBLIC_API_URL, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

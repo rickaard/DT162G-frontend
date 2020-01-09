@@ -29,3 +29,9 @@
         }
     }
 }
+
+@media screen and (max-width: 500px) {
+    .delete-wrapper {
+        min-width: 270px;
+    }
+}

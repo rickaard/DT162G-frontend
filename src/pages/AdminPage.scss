@@ -143,3 +143,60 @@
         }
     }
 }
+@media screen and (max-width: 1200px) {
+    .content-wrapper {
+        width: 95%;
+        table tr {
+            td {
+                padding: 0 .5em;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .admin-content .admin-toolbar {
+        width: 80%;
+
+        .toolbox-status {
+            font-size: 1.2em;
+        }
+    }
+}
+@media screen and (max-width: 800px) {
+    .admin-content .admin-toolbar {
+        width: 80%;
+
+        .admin-toolbox {
+            
+            .toolbox-status {
+                font-size: 1.2em;
+            }
+        }
+    }
+
+}
+@media screen and (max-width: 600px) {
+    .admin-content .admin-toolbar {
+        width: 90%;
+
+        .admin-toolbox {
+            
+            .toolbox-status {
+                font-size: 1em;
+            }
+        }
+    }
+
+}
+@media screen and (max-width: 500px) {
+    .admin-content .admin-toolbar {
+        width: 95%;
+    }
+    .admin-container .admin-menubar button {
+        padding: 1rem 1rem;
+        
+    }
+}

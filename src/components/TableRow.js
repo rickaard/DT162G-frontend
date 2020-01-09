@@ -15,6 +15,7 @@ const TableRow = props => {
     const [snus, setSnus] = useState([]);
     const [snusTable, setSnusTable] = useState(initTable);
 
+    // hämta hem data från databasen när komponenten mountas
     useEffect( () => {
         fetch(process.env.REACT_APP_PUBLIC_API_URL)
         .then(res => res.json())

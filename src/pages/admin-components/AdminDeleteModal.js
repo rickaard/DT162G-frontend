@@ -43,7 +43,7 @@ const AdminDeleteModal = props => {
                         </div>
                         <div className="btn-wrapper">
                             <span className="delete-close" onClick={closeModal}>Avbryt</span>
-                            <span className="delete-confirm" onClick={handleDelete}>Ta bort</span>
+                            <span className="delete-confirm" onClick={handleDelete}>Radera</span>
                         </div>
                     </div>
                 </Modal>

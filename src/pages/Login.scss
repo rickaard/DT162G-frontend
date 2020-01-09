@@ -57,3 +57,14 @@
         }
     }
 }
+
+@media screen and (max-width: 800px) {
+    .login-container {
+        padding: 0 1em;
+
+        .login-form {
+            width: 250px;
+        }
+    }
+
+}

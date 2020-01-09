@@ -32,7 +32,11 @@ const Login = () => {
                 history.replace(from);
             }
         })
-        .catch(err => console.log(err))
+        .catch(err => {
+            console.log(err);
+            setResponded(true);
+            setRespondMsg('Unable to login. Try again later');
+        })
     };
 
     return (

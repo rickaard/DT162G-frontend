@@ -5,7 +5,7 @@ import AdminDeleteModal from './AdminDeleteModal';
 const AdminTableRow = props => {
     const [snusData, setSnusData] = useState(undefined); // state där alla snus lagras
     const [toggleUpdate, setToggleUpdate] = useState(false); // boolean-state som togglas för att forcera en update av komponent när man gör en ändring
-
+    const [isLoaded, setIsLoaded] = useState(false);
 
     useEffect( () => {
 
@@ -17,6 +17,7 @@ const AdminTableRow = props => {
             })
             .then(res => res.json())
             .then(data => {
+                setIsLoaded(true);
                 setSnusData(data.snus);
             })
             .catch(err => console.log(err))
@@ -31,6 +32,7 @@ const AdminTableRow = props => {
 
     return (
         <tbody>
+            {!isLoaded && <tr><td>Laddar....</td></tr>}
             {!snusData ? <tr><td>{`Här var det tomt!`}</td></tr> : 
             snusData.map((snus, index) => {
                 return (

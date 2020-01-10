@@ -6,6 +6,7 @@ const SearchBar = () => {
     const [showSearchResult, setShowSearchResult] = useState(false);
     const [searchResult, setSearchResult] = useState(undefined);
     const [showErrorMsg, setShowErrorMsg] = useState(false);
+    const [isLoaded, setIsLoaded] = useState(false);
 
     const node = useRef();
 
@@ -31,6 +32,7 @@ const SearchBar = () => {
             fetch(process.env.REACT_APP_SEARCH + searchInput)
             .then(res => res.json())
             .then(data =>  {
+                setIsLoaded(true);
                 setSearchResult(data);
                 setShowSearchResult(true);
             })
@@ -47,7 +49,7 @@ const SearchBar = () => {
             document.removeEventListener("mousedown", handleClick);
         }
     }, []);
-
+    
     return (
         <div>
             <form className="searchbar" onSubmit={handleSubmit} ref={node}>
@@ -63,11 +65,17 @@ const SearchBar = () => {
                 />
                 {showSearchResult && (
                     <div className="search-result">
-                        {searchResult && (
+                        {/* {searchResult && (
                             searchResult.map((snus, index) => {
                                 return <span key={index}><Link to={`/snus/${snus._id}`}>{`${snus.brand} ${snus.product}`}</Link></span>
                             })
-                        )}
+                        )} */}
+                        {!isLoaded && <span>Laddar...</span>}
+                        {searchResult.length >= 1 ? searchResult.map((snus, index) => {
+                            return <span key={index}><Link to={`/snus/${snus._id}`}>{`${snus.brand} ${snus.product}`}</Link></span> 
+                        }) : 
+                            <span>Finns ingen snus med det sökordet</span>
+                        }
                     </div>
                 )}
                 {showErrorMsg && (
